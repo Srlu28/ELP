@@ -1,22 +1,24 @@
-import {createTheme, CssBaseline, ThemeProvider} from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import React from 'react';
+import { makeStyles } from 'tss-react/mui';
 import Header from './components/Header'
-import ImagePage from './components/ImagePage';
-import './App.css'
-import 'typeface-nunito';
+import Visit from './components/PlaceToVisit';
 
-const theme = createTheme({
-    typography: {
-        fontFamily: "Nunito"
+const styles = {
+    root: {
+        minHeight: '100vh',
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/bg1.jpg"})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
     }
-});
+};
 
-const App = () => <div className="rootCl">
-  <ThemeProvider  theme={theme} >
-    <CssBaseline/>
-    <Header className="section"/>
-    <ImagePage className="section"/>
-  </ThemeProvider>
-</div>;
-
-export default App;
+export default function App(){
+  return (
+      <div style={styles.root}>
+        <CssBaseline/>
+        <Header/>
+        <Visit/>
+      </div>
+  );
+}

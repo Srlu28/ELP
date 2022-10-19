@@ -1,11 +1,33 @@
 import React from "react";
 import { Card, CardContent, CardMedia, Collapse, Typography } from "@mui/material";
-import '../css/image.css'
 
-const ImageCard = ({ card, checked }) => <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
-      <Card className="image-card">
+const styles = {
+    root: {
+        maxWidth: 645,
+        background: "rgba(0,0,0,0.5)",
+        margin: "20px",
+    },
+    media: {
+        height: 440,
+    },
+    title: {
+        fontFamily: "Nunito",
+        fontWeight: "bold",
+        fontSize: "2rem",
+        color: "#fff",
+    },
+    desc: {
+        fontFamily: "Nunito",
+        fontSize: "1.1rem",
+        color: "#ddd",
+    },
+};
+
+const ImageCard = ({ card, checked }) => {
+    return <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
+      <Card style={styles.root}>
         <CardMedia
-          className="media"
+          style={styles.media}
           image={card.imageUrl}
           title="Prácticas"
         />
@@ -14,18 +36,21 @@ const ImageCard = ({ card, checked }) => <Collapse in={checked} {...(checked ? {
             gutterBottom
             variant="h5"
             component="h1"
-            className="title"
+            style={styles.title}
           >
             {card.title}
           </Typography>
           <Typography
+            variant="body2"
+            color="textSecondary"
             component="p"
-            className="desc"
+            style={styles.desc}
           >
             {card.description}
           </Typography>
         </CardContent>
       </Card>
     </Collapse>;
+}
 
 export default ImageCard;
