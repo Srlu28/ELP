@@ -1,10 +1,9 @@
-import { AppBar, IconButton, Toolbar, Collapse, Box } from "@mui/material";
+import {AppBar, IconButton, Toolbar, Collapse, Box, Typography} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import LongMenu from "./LongMenu";
 import { Link as LogoLink } from "react-router-dom";
 import { CssBaseline } from "@mui/material";
 
-//const color1 = "#A4B6DD";
 const color2 = "#5AFF3D";
 
 const styles = {
@@ -46,7 +45,6 @@ const styles = {
   },
   subtitle: {
     color: "#f2f2f2",
-    fontSize: "1.5rem",
   },
   goDown: {
     color: color2,
@@ -81,9 +79,9 @@ export default function About() {
               <img style={styles.Logo} src="/assets/railway.png" alt="logo" />
             </IconButton>
           </LogoLink>
-          <h1 style={styles.AppBarTitle}>
+          <Typography variant="h3" style={styles.AppBarTitle}>
             <span style={styles.TextColor}>Logic</span>stics.
-          </h1>
+          </Typography>
           <IconButton>
             <LongMenu />
           </IconButton>
@@ -95,28 +93,21 @@ export default function About() {
         collapsedHeight={50}
       >
         <div style={styles.container}>
-          <h1 style={styles.title}>
-            ¿Qué es <br />
-            <span style={styles.TextColor}>Logic</span>stics?
-          </h1>
+          <Typography variant="h1" style={styles.title}>
+            <span style={styles.TextColor}>Logic</span>stics
+          </Typography>
           <Box style={styles.Back} pt={1} pr={4} pl={4} pb={1}>
-            <p style={styles.subtitle}>
-              Cuando Maider Mansilla , Arantxa Rosell y Luisa Galvan fundaron
-              Logicstics en 1969, no sabían que <br />
-              estaban revolucionando el mundo de la logística. Hoy, Logicstics
-              es la empresa de logística líder en el <br />
-              mundo. Nuestros 380 000 empleados en más de 220 países y
-              territorios trabajan todos los días para <br />
-              ayudarle a superar barreras, llegar a nuevos mercados y hacer
-              crecer su negocio. La metodología que ha <br />
-              llevado al éxito a Logicstics ha sido la implementación de
-              Inteligencia Artificial en su flujo de trabajo,
-              <br />
-              ayudando a miles de empresas dedicadas al sector de la moda a
-              reducir la sobreproducción de ropa, <br />
-              facilitando un modelo que sea sostenible con el Medio Ambiente y
-              que ayude a evitar el desperdicio de ropa. <br />
-            </p>
+            <Typography variant="body1" style={styles.subtitle}>
+              Ayudamos a miles de empresas de moda a
+              reducir la sobreproducción.<br/>
+
+              Nuestros valores:
+              <ul style={{listStyleType: 'none'}}>
+                <li><b>Menos es más</b>: creemos en que podemos hacer más con menos.
+                  La eficiencia es nuestra prioridad </li>
+                <li><b>Líderes</b>: queremos permanecer en la vanguardia de la revolución tecnológica</li>
+              </ul>
+            </Typography>
           </Box>
         </div>
       </Collapse>

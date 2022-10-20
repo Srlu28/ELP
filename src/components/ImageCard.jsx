@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardMedia, Collapse, Typography } from "@mui/material";
+import {Card, CardContent, CardMedia, Collapse, Typography, useMediaQuery} from "@mui/material";
 
 const styles = {
     root: {
@@ -24,6 +24,7 @@ const styles = {
 };
 
 const ImageCard = ({ card, checked }) => {
+    const isMobile = useMediaQuery('(min-width: 800px)')
     return <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
       <Card style={styles.root}>
         <CardMedia
@@ -46,7 +47,7 @@ const ImageCard = ({ card, checked }) => {
             component="p"
             style={styles.desc}
           >
-            {card.description}
+              {isMobile ? card.description : ''}
           </Typography>
         </CardContent>
       </Card>

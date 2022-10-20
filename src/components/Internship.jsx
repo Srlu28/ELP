@@ -1,4 +1,4 @@
-import { AppBar, IconButton, Toolbar, Collapse, Box } from "@mui/material";
+import {AppBar, IconButton, Toolbar, Collapse, Typography} from "@mui/material";
 import React, { useEffect, useState } from "react";
 import LongMenu from "./LongMenu";
 import { Link as LogoLink } from "react-router-dom";
@@ -44,12 +44,10 @@ const styles = {
   },
   title: {
     color: "#fff",
-    fontSize: "4.5rem",
     padding: "0 20%"
   },
   subtitle: {
     color: "#f2f2f2",
-    fontSize: "1.5rem",
   },
   goDown: {
     color: color3,
@@ -105,9 +103,9 @@ export default function Internship() {
         collapsedHeight={50}
       >
         <div style={styles.container}>
-          <h2 style={styles.title}>
+          <Typography variant="h2" style={styles.title}>
             ¿Quieres desarrollar para una empresa líder en el sector?
-          </h2>
+          </Typography>
           <Button variant="contained" style={styles.CustomButton}><a href="https://google.es" style={{textDecoration:"none",color:"white"}}>Envíanos tu CV</a></Button>
         </div>
       </Collapse>

@@ -4,7 +4,7 @@ import {
   Toolbar,
   Collapse,
   Box,
-  CssBaseline,
+  CssBaseline, Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -50,11 +50,9 @@ const styles = {
   },
   title: {
     color: "#fff",
-    fontSize: "4.5rem",
   },
   subtitle: {
     color: "#f2f2f2",
-    fontSize: "1.5rem",
   },
   goDown: {
     color: color2,
@@ -90,9 +88,9 @@ export default function Header() {
             </IconButton>
           </LogoLink>
 
-          <h1 style={styles.AppBarTitle}>
+          <Typography variant="h3" style={styles.AppBarTitle}>
             <span style={styles.TextColor}>Logic</span>stics.
-          </h1>
+          </Typography>
           <IconButton>
             <LongMenu />
           </IconButton>
@@ -104,21 +102,20 @@ export default function Header() {
         collapsedHeight={50}
       >
         <div style={styles.container}>
-          <h1 style={styles.title}>
+          <Typography variant="h1" style={styles.title}>
             Bienvenido a <br />
             <span style={styles.TextColor}>Logic</span>stics.
-          </h1>
+          </Typography>
           <Box style={styles.Back} pt={1} pr={4} pl={4} pb={1}>
-            <p style={styles.subtitle}>
-              Logicstics es una empresa dedicada a la creación de algoritmos de
+            <Typography variant="body1" style={styles.subtitle}>
+              Logicstics se dedica a la creación de algoritmos de
               Machine Learning <br />
               para la predicción de la demanda de prendas de ropa tienda a
               tienda.
               <br />
-              De esta manera no tienen que mantener stock, evitando la
-              sobreproducción <br />y apoyando que la industria de la moda sea
+              Así evitamos la sobreproducción y creamos una industria de la moda
               más sostenible.
-            </p>
+            </Typography>
           </Box>
           <Link to="place-to-visit" smooth={true}>
             <IconButton>

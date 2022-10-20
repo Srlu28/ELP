@@ -4,6 +4,7 @@ import About from "./components/About";
 import Internship from "./components/Internship";
 import { Route, Routes } from "react-router";
 import Home from "./components/Home";
+import {createTheme, CssBaseline, responsiveFontSizes, ThemeProvider} from "@mui/material";
 
 const styles = {
   root: {
@@ -41,14 +42,49 @@ const styles = {
   }
 };
 
-export default function App() {
-  return (
-    <div style={styles.root} className="rootCl">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="About" element={<About />} />
-        <Route path="Internship" element={<Internship />} />
-      </Routes>
-    </div>
-  );
-}
+const theme = responsiveFontSizes(createTheme({
+  typography: {
+    fontFamily: "Nunito"
+  }
+}));
+
+theme.typography.h1 = {
+  fontSize: '1.5rem',
+  '@media (max-width:800px)': {
+    fontSize: '3.5rem',
+  },
+};
+
+theme.typography.h2 = {
+  fontSize: '1.5rem',
+  '@media (max-width:800px)': {
+    fontSize: '2.5rem',
+  },
+};
+
+theme.typography.h3 = {
+  fontSize: '1rem',
+  '@media (max-width:800px)': {
+    fontSize: '1.5rem',
+  },
+};
+
+
+theme.typography.body1 = {
+  fontSize: '0.5rem',
+  '@media (max-width:800px)': {
+    fontSize: '1.25rem',
+  },
+};
+
+
+export default () => <div style={styles.root} className="rootCl">
+  <ThemeProvider  theme={theme}>
+    <CssBaseline />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="About" element={<About />} />
+      <Route path="Internship" element={<Internship />} />
+    </Routes>
+  </ThemeProvider>
+</div>;
