@@ -3,12 +3,16 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import SortIcon from "@mui/icons-material/Sort";
+import { Link } from 'react-router-dom';
 
 const options = [
   'Quiénes Somos',
   'Programa prácticas',
-  'Contacto',
 ];
+const optionsTrad = {
+  'Quiénes Somos':'About',
+  'Programa prácticas':'Internship',
+};
 
 const styles = {
   MenuIcon: {
@@ -59,7 +63,7 @@ export default function LongMenu() {
       >
         {options.map((option) => (
           <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-            {option}
+            <Link style={{textDecoration:"none",color:"black"}} to={`/${optionsTrad[option]}`}>{option}</Link>
           </MenuItem>
         ))}
       </Menu>

@@ -1,19 +1,13 @@
-import {
-  AppBar,
-  IconButton,
-  Toolbar,
-  Collapse,
-  Box,
-  CssBaseline,
-} from "@mui/material";
+import { AppBar, IconButton, Toolbar, Collapse, Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import LongMenu from "./LongMenu";
-import { Link } from "react-scroll";
 import { Link as LogoLink } from "react-router-dom";
+import { CssBaseline } from "@mui/material";
+import Button from '@mui/material/Button';
 
 //const color1 = "#A4B6DD";
 const color2 = "#5AFF3D";
+const color3 = "#33AB5F"
 
 const styles = {
   root: {
@@ -51,13 +45,14 @@ const styles = {
   title: {
     color: "#fff",
     fontSize: "4.5rem",
+    padding: "0 20%"
   },
   subtitle: {
     color: "#f2f2f2",
     fontSize: "1.5rem",
   },
   goDown: {
-    color: color2,
+    color: color3,
     fontSize: "4rem",
   },
   Logo: {
@@ -72,9 +67,16 @@ const styles = {
       "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
     borderRadius: "20px",
   },
+  CustomButton:{
+    width: '250px', 
+    height: '80px', 
+    fontSize:'1.5rem', 
+    borderRadius: "20px",
+    backgroundColor: color3
+  }
 };
 
-export default function Header() {
+export default function Internship() {
   const [checked, setChecked] = useState(false);
   useEffect(() => {
     setChecked(true);
@@ -89,7 +91,6 @@ export default function Header() {
               <img style={styles.Logo} src="/assets/railway.png" alt="logo" />
             </IconButton>
           </LogoLink>
-
           <h1 style={styles.AppBarTitle}>
             <span style={styles.TextColor}>Logic</span>stics.
           </h1>
@@ -104,27 +105,10 @@ export default function Header() {
         collapsedHeight={50}
       >
         <div style={styles.container}>
-          <h1 style={styles.title}>
-            Bienvenido a <br />
-            <span style={styles.TextColor}>Logic</span>stics.
-          </h1>
-          <Box style={styles.Back} pt={1} pr={4} pl={4} pb={1}>
-            <p style={styles.subtitle}>
-              Logicstics es una empresa dedicada a la creación de algoritmos de
-              Machine Learning <br />
-              para la predicción de la demanda de prendas de ropa tienda a
-              tienda.
-              <br />
-              De esta manera no tienen que mantener stock, evitando la
-              sobreproducción <br />y apoyando que la industria de la moda sea
-              más sostenible.
-            </p>
-          </Box>
-          <Link to="place-to-visit" smooth={true}>
-            <IconButton>
-              <ExpandMoreIcon style={styles.goDown} />
-            </IconButton>
-          </Link>
+          <h2 style={styles.title}>
+            ¿Quieres desarrollar para una empresa líder en el sector?
+          </h2>
+          <Button variant="contained" style={styles.CustomButton}><a href="https://google.es" style={{textDecoration:"none",color:"white"}}>Envíanos tu CV</a></Button>
         </div>
       </Collapse>
     </div>

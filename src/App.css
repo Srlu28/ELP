@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.rootCl{
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+.section{
+  scroll-snap-align: center;
+}

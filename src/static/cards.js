@@ -2,14 +2,14 @@ const cards = [
     {
       title: 'Quiénes somos',
       description:
-        "The Maldives are home to some of the world's most ravishing islands, but it's the sea, which truly makes these islands shine. Luminous aquamarine waters with a crystal clarity lap upon these dazzling white shores, which barely peek above the Indian Ocean.",
+        "Conoce las principales motivaciones que llevaron a logicstics a ser la empresa que es a día de hoy y nuestra filosofía de trabajo. Queremos que nuestros clientes sepan cual es nuestro objetivo y la importancia de este.",
       imageUrl: process.env.PUBLIC_URL + '/assets/who.jpg',
       time: 1500,
     },
     {
       title: 'Programa de prácticas',
       description:
-        'Shaped like a giant sombrero, this lush volcanic island stars in countless South Pacific fantasies. The focal point and best asset of this tropical beauty is its ravishing lagoon in technicolor turquoise. Fish, turtles, sharks, and rays swim in the clear waters.',
+        '¿Quieres adentrarte en el mundo labortal de la mano de logicstics? En nuestra empresa ofertamos un gran abanico de posibilidades para que los recién graduados empiecen a adquirir experiencia en el mundo laboral.',
       imageUrl: process.env.PUBLIC_URL + '/assets/prac1.jpg',
       time: 1500,
     },
